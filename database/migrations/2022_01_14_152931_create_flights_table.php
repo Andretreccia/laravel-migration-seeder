@@ -14,13 +14,13 @@ class CreateFlightsTable extends Migration
     public function up()
     {
         Schema::create('flights', function (Blueprint $table) {
-            //
             $table->id();
-            $table->string('package-name');
-            $table->string('travel-destination');
+            $table->string('package_name');
+            $table->string('travel_destination');
             $table->text('description');
             $table->string('duration');
             $table->float('price');
+            $table->timestamps();
         });
     }
 
@@ -31,8 +31,6 @@ class CreateFlightsTable extends Migration
      */
     public function down()
     {
-        Schema::table('flights', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('flights');
     }
 }
