@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateBlogsTable extends Migration
+class CreatePostsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -15,9 +15,9 @@ class CreateBlogsTable extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
-            $table->varchar(45)('title');
-            $table->text('body');
-            $table->varchar(45)('author');
+            $table->string('title', 45);
+            $table->longtext('body');
+            $table->string('author', 45);
             $table->dateTime('date_post');
             $table->timestamps();
         });

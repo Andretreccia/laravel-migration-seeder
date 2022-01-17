@@ -1,10 +1,10 @@
 <?php
 
-use Illuminate\Database\Seeder;
 use App\Models\Post;
+use Illuminate\Database\Seeder;
 use Faker\Generator as Faker;
 
-class BlogSeeder extends Seeder
+class PostSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,12 +15,12 @@ class BlogSeeder extends Seeder
     {
         //
         for ($i = 0; $i < 10; $i++) {
-            $post = new Post();
-            $post->title = $faker->title();
-            $post->body = $faker->text();
-            $post->author = $faker->name();
-            $post->date_post = $faker->dateTime();
-            $post->save();
+            $_post = new Post();
+            $_post->title = $faker->unique()->word;
+            $_post->body = $faker->text($maxNbChars = 200);
+            $_post->author = $faker->name();
+            $_post->date_post = $faker->dateTime();
+            $_post->save();
         }
     }
 }

@@ -13,6 +13,17 @@ class TravelPackageController extends Controller
     {
         $travelpackages = TravelPackage::all();
 
-        return view('TravelPackages', compact('travelpackages'));
+        return view('travel-package.index', compact('travelpackages'));
+    }
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\Models\TravelPackage  $travelpackage
+     * @return \Illuminate\Http\Response
+     */
+    public function show(TravelPackage $travelpackage)
+    {
+        //
+        return view('travel-package.show', compact('travelpackage'));
     }
 }

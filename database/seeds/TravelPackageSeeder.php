@@ -1,9 +1,7 @@
 <?php
 
-use App\Models\TravelPackage;
 use Illuminate\Database\Seeder;
-use App\Models\TravelPackages;
-use Faker\Generator as Faker;
+use App\Models\TravelPackage;
 
 class TravelPackageSeeder extends Seeder
 {
@@ -12,13 +10,8 @@ class TravelPackageSeeder extends Seeder
      *
      * @return void
      */
-    public function run(Faker $faker)
+    public function run()
     {
-        /*  for ($i = 0; $i < 10; $i++) {
-            $travelpackage = new TravelPackage();
-            $travelpackage->package_name = $faker->name();
-            $travelpackage->save();
-        } */
         $packages = [
             [
                 'package_name' => 'Incantevole Evasione',

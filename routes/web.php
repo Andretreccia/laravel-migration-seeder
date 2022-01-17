@@ -13,4 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'TravelPackageController@index');
+Route::get('/', 'HomeController@index')->name('home');
+
+Route::get('travel-package', 'TravelPackageController@index')->name('travels');
+Route::get('travel-package/{travel}', 'TravelPackageController@show')->name('travel');
+
+
+Route::get('news', 'PostController@index')->name('news');
+Route::get('news/{post}', 'PostController@index')->name('post');
